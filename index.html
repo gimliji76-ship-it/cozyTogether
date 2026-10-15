@@ -36,8 +36,8 @@
 .mb-add{margin-top:18px;border:1px dashed #e7b6c8;background:#fff8fb;border-radius:16px;padding:14px}.mb-add h3{margin:0 0 6px;font-size:17px;color:#8a4a63}
 .mb-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.mb-row .mb-in{flex:1 1 140px}.mb-row select.mb-in{flex:0 0 110px}
 .mb-new{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px;border:2px solid #f06c9b;background:#fff3f7;border-radius:12px}.mb-new img{width:44px;height:55px;object-fit:cover;border-radius:7px}.mb-new .t{flex:1;font-size:15px;color:#5a4650}.mb-new button{border:0;background:#fff;color:#a8416a;border-radius:999px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
-.mb-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.mb-link{background:none;border:0;color:#a8416a;text-decoration:underline;font:inherit;font-size:14px;cursor:pointer;padding:6px}
-</style></head><body><div class="wrap"><header class="hero"><div class="hero-row"><h1>💛 같이 ʕ·ᴥ·ʔ 💛</h1><button class="admin-btn" id="adminOpen" type="button">🔐 관리자 모드</button></div><div class="search-row"><input autocomplete="off" class="search" id="q" placeholder="🌷 꽃 이름을 검색하세요" type="search"/><button class="member-btn" id="memberOpen" type="button">✍️ 쉬운도감등록</button></div></header>
+.mb-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.mb-top{display:flex;gap:8px;padding-top:14px}.mb-top .mb-btn{flex:1 1 0;padding:11px 8px;font-size:16px}.mb-link{background:none;border:0;color:#a8416a;text-decoration:underline;font:inherit;font-size:14px;cursor:pointer;padding:6px}
+</style></head><body><div class="wrap"><header class="hero"><div class="hero-row"><h1>💛 같이 ʕ·ᴥ·ʔ 💛</h1><button class="admin-btn" id="adminOpen" type="button">🔐 관리자 모드</button></div><div class="search-row"><input autocomplete="off" class="search" id="q" placeholder="🌷 꽃 이름을 검색하세요" type="search"/><button class="member-btn" id="memberOpen" type="button">나의도감관리🖤</button></div></header>
 <section class="admin-area" id="adminLogin" hidden aria-label="관리자 로그인"><h2>🔐 관리자 로그인</h2><p>관리자 비밀번호를 입력해 주세요.</p><div class="admin-row"><input id="adminPassword" type="password" inputmode="numeric" autocomplete="off" placeholder="비밀번호" aria-label="관리자 비밀번호"/><button class="admin-action primary" id="adminLoginBtn" type="button">로그인</button></div><div class="admin-status" id="loginStatus" aria-live="polite"></div></section>
 <section class="admin-area" id="adminPanel" hidden aria-label="길드원 관리자"><h2>💛 길드원 일괄 관리</h2><p>한 줄에 한 항목씩 입력해 주세요. 변경 전 목록을 확인하고 실행하세요.</p><div class="admin-note">☁️ 아래에서 바꾼 내용은 Supabase 서버에 자동으로 저장돼서 모든 방문자에게 바로 보여요. HTML 파일을 다시 올릴 필요가 없어요.</div>
 <div class="admin-grid">
@@ -47,7 +47,7 @@
 <div><h3>🌼 꽃 정보 일괄 등록</h3><p>한 줄마다 길드원,꽃 이름,등급 형식으로 입력하세요. 등급은 UR / SSR / SR / R / N 중 하나예요. 이미 있는 꽃 이름이면 해당 길드원 소유 목록에 추가됩니다.</p><textarea id="addFlowers" placeholder="예시:&#10;새길드원1,별빛 장미,SSR&#10;새길드원2,달빛 튤립,SR"></textarea><p style="margin-top:10px">📷 사진 첨부(선택): 사진 파일 이름을 꽃 이름과 똑같이 해 주세요. 예) 별빛 꿈의 방주.jpg (여러 장 가능). 위에 꽃을 한 종류만 적고 사진도 한 장이면 이름이 달라도 그 꽃에 붙어요. 이미 있는 꽃은 사진만 올려도 교체돼요.</p><input accept="image/*" id="addFlowerImages" multiple type="file" style="margin:4px 0 8px;max-width:100%"/><div class="admin-row"><button class="admin-action primary" id="addFlowersBtn" type="button">꽃 정보 등록</button></div></div>
 <div><h3>✏️ 꽃 이름 일괄 수정</h3><p>한 줄마다 기존 꽃 이름,새 꽃 이름 형식으로 입력하세요. 사진과 등급, 가진 길드원은 그대로 따라가요.</p><textarea id="renameFlowers" placeholder="예시:&#10;별빛 장미,별빛 장미꽃&#10;달빛 튤립,달빛 튤립꽃"></textarea><div class="admin-row"><button class="admin-action primary" id="renameFlowersBtn" type="button">꽃 이름 수정</button></div></div>
 <div><h3>🗑️ 꽃 일괄 삭제</h3><p>한 줄에 꽃 이름만 쓰면 그 꽃이 통째로 삭제돼요(사진 포함). 길드원,꽃 이름으로 쓰면 그 길드원이 가진 꽃에서만 빠지고, 가진 사람이 없어지면 꽃도 삭제돼요.</p><textarea id="deleteFlowers" placeholder="예시:&#10;별빛 장미&#10;보니,달빛 튤립"></textarea><div class="admin-row"><button class="admin-action danger" id="deleteFlowersBtn" type="button">선택한 꽃 삭제</button></div></div>
-<div><h3>🔑 언니들 공용 비밀번호</h3><p>"✍️ 쉬운도감등록"에 들어갈 때 쓰는 비밀번호예요. 관리자 비밀번호와는 따로이고, 이걸로는 삭제·이름 수정을 할 수 없어요. 바꾸면 언니들에게 새 비밀번호를 알려 주세요.</p><input id="memberPwNew" type="text" autocomplete="off" placeholder="새 공용 비밀번호 (2글자 이상)"/><div class="admin-row"><button class="admin-action primary" id="memberPwBtn" type="button">공용 비밀번호 바꾸기</button></div></div>
+<div><h3>🔑 언니들 공용 비밀번호</h3><p>"나의도감관리🖤"에 들어갈 때 쓰는 비밀번호예요. 관리자 비밀번호와는 따로이고, 이걸로는 삭제·이름 수정을 할 수 없어요. 바꾸면 언니들에게 새 비밀번호를 알려 주세요.</p><input id="memberPwNew" type="text" autocomplete="off" placeholder="새 공용 비밀번호 (2글자 이상)"/><div class="admin-row"><button class="admin-action primary" id="memberPwBtn" type="button">공용 비밀번호 바꾸기</button></div></div>
 </div>
 <h3>☁️ 서버 저장 / 백업</h3><p>위 기능을 쓰면 자동으로 서버에 저장돼요. 처음이거나 저장이 잘 됐는지 모르겠으면 "지금 서버에 저장"을 눌러 주세요. 백업이 필요하면 HTML을 내려받을 수 있어요.</p><div class="admin-row"><button class="admin-action primary" id="saveServerBtn" type="button">☁️ 지금 서버에 저장</button><button class="admin-action" id="exportHtmlBtn" type="button">백업용 HTML 다운로드</button><button class="admin-action" id="adminLogoutBtn" type="button">관리자 로그아웃</button></div><div class="admin-status" id="saveStatus" aria-live="polite"></div><div class="admin-status" id="adminStatus" aria-live="polite">관리자 기능을 사용할 수 있어요.</div></section>
 <section class="panel"><div class="filters"><div><span class="label">등급</span><div class="pills" id="ranks"><span class="pill active">전체</span></div></div><div><span class="label">도감</span><div class="pills" id="books"><a class="pill active" href="#results">전체</a></div></div></div><div class="stats" id="stats"><div class="stat"><b>72</b><span>리지 꽃</span></div><div class="stat"><b>8</b><span>UR</span></div><div class="stat"><b>11</b><span>SSR</span></div><div class="stat"><b>33</b><span>SR</span></div><div class="stat"><b>20</b><span>R</span></div></div></section><div class="heading"><h2>꽃 모아보기</h2><span class="count" id="count">리지 · 72종</span></div><main aria-live="polite" class="results" id="results"></main><p class="foot">비공식 팬 도감 · 보내주신 목록을 기준으로 정리했어요 🌼</p></div><script>
@@ -88,7 +88,7 @@ $('deleteFlowersBtn').addEventListener('click',async()=>{const rows=lines('delet
 $('memberPwBtn').addEventListener('click',async()=>{const v=$('memberPwNew').value.trim();if(!SB){setAdminStatus('Supabase가 연결되지 않았어요.');return;}if(v.length<2){setAdminStatus('공용 비밀번호는 2글자 이상으로 입력해 주세요.');return;}try{await sbRpc('set_member_password',{p_admin_pw:adminPw,p_new:v});$('memberPwNew').value='';setAdminStatus('공용 비밀번호를 바꿨어요.\n언니들에게 새 비밀번호를 알려 주세요: '+v);}catch(e){setAdminStatus(/PGRST202|Could not find/.test(String(e.message))?'서버 설정(supabase_setup_part4.sql)을 먼저 실행해 주세요.':'바꾸지 못했어요. 잠시 후 다시 시도해 주세요.');}});
 $('saveServerBtn').addEventListener('click',async()=>{const ok=await sbPersist();setAdminStatus(ok?'현재 목록을 서버에 저장했어요.':SB?'저장하지 못했어요.':'Supabase가 연결되지 않았어요.');});
 $('adminLogoutBtn').addEventListener('click',()=>{adminPw=null;render();$('adminPanel').hidden=true;$('adminLogin').hidden=true;$('loginStatus').textContent='로그아웃했어요.';setAdminStatus('로그아웃됐어요.');});
-/* ===== 쉬운도감등록 (언니들용) ===== */
+/* ===== 나의도감관리 (언니들용) ===== */
 (function(){
 const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const nz=x=>String(x).replace(/\s+/g,'');
@@ -98,7 +98,7 @@ const dirty=()=>!!st&&st.step==='pick'&&(st.added.length>0||st.owned.size!==st.i
 function close(force){if(!box)return;if(!force&&dirty()&&!confirm('저장하지 않은 변경이 있어요.\n그래도 닫을까요?'))return;box.remove();box=null;sheet=null;document.body.style.overflow='';}
 const scoreTxt=f=>f.rank==='UR'?' '+(f.score||28)+'점':f.rank==='SSR'?' '+(f.score||25)+'점':'';
 const head=t=>`<div class="mb-head"><span>${t}</span><button class="mb-x" data-a="x" type="button" aria-label="닫기">✕</button></div>`;
-function loadOwned(){const o=new Set();D.flowers.forEach(f=>{if((f.books||[]).includes(st.name))o.add(f.name)});st.owned=new Set(o);st.init=new Set(o);st.added=[];}
+function loadOwned(){const o=new Set();D.flowers.forEach(f=>{if((f.books||[]).includes(st.name))o.add(f.name)});st.owned=new Set(o);st.init=new Set(o);st.added=[];st.addOpen=false;st.view=o.size?'mine':'전체';}
 function open(){
   if(!SB){toast('Supabase가 연결되지 않아 등록할 수 없어요.');return}
   const pw=LS.get('gd_mpw')||'',nm=LS.get('gd_mname')||'';
@@ -116,27 +116,26 @@ function open(){
 function draw(){
   if(!sheet)return;
   if(st.step==='login'){
-    sheet.innerHTML=head('💛 쉬운도감등록')+`<div class="mb-body"><p class="mb-p">언니들 전용 <b>공용 비밀번호</b>를 입력해 주세요.<br>모르면 관리자에게 물어봐 주세요 💛</p><input class="mb-in" id="mbpw" type="password" autocomplete="off" placeholder="공용 비밀번호"/><div class="mb-err" id="mberr">${esc(st.err||'')}</div></div><div class="mb-foot"><button class="mb-btn main" data-a="login" type="button">확인</button></div>`;
+    sheet.innerHTML=head('나의도감관리🖤')+`<div class="mb-body"><p class="mb-p">언니들 전용 <b>공용 비밀번호</b>를 입력해 주세요.<br>모르면 관리자에게 물어봐 주세요 💛</p><input class="mb-in" id="mbpw" type="password" autocomplete="off" placeholder="공용 비밀번호"/><div class="mb-err" id="mberr">${esc(st.err||'')}</div></div><div class="mb-foot"><button class="mb-btn main" data-a="login" type="button">확인</button></div>`;
     setTimeout(()=>{const i=$('mbpw');if(i)i.focus()},60);
   }else if(st.step==='name'){
-    sheet.innerHTML=head('💛 쉬운도감등록')+`<div class="mb-body"><p class="mb-p">내 이름을 눌러 주세요.</p><div class="mb-names">${D.books.map(b=>`<button class="mb-name" data-a="name" data-v="${esc(b)}" type="button">${esc(b)}</button>`).join('')}</div><div class="mb-add"><h3>🌷 목록에 내 이름이 없어요</h3><div class="mb-row"><input class="mb-in" id="mbnew" autocomplete="off" placeholder="내 이름(닉네임)"/><button class="mb-btn" data-a="newname" type="button">이 이름으로 시작</button></div></div><div class="mb-err" id="mberr"></div></div><div class="mb-foot"><button class="mb-btn ghost" data-a="logout" type="button">비밀번호 다시 입력</button></div>`;
+    sheet.innerHTML=head('나의도감관리🖤')+`<div class="mb-body"><p class="mb-p">내 이름을 눌러 주세요.</p><div class="mb-names">${D.books.map(b=>`<button class="mb-name" data-a="name" data-v="${esc(b)}" type="button">${esc(b)}</button>`).join('')}</div><div class="mb-add"><h3>🌷 목록에 내 이름이 없어요</h3><div class="mb-row"><input class="mb-in" id="mbnew" autocomplete="off" placeholder="내 이름(닉네임)"/><button class="mb-btn" data-a="newname" type="button">이 이름으로 시작</button></div></div><div class="mb-err" id="mberr"></div></div><div class="mb-foot"><button class="mb-btn ghost" data-a="logout" type="button">비밀번호 다시 입력</button></div>`;
   }else drawPick();
 }
 function drawPick(){
   const cards=D.flowers.map(f=>{const img=DBIMG[f.name]||IMG[f.name];return `<button class="mb-card${st.owned.has(f.name)?' on':''}" type="button" data-a="tg" data-n="${esc(f.name)}" data-r="${esc(f.rank)}"><span class="ck">✓</span><span class="ph">${img?`<img src="${img}" alt="" loading="lazy"/>`:'🌷'}</span><span class="nm">${esc(f.name)}</span><span class="rk">${esc(f.rank)}${scoreTxt(f)}</span></button>`}).join('');
-  sheet.innerHTML=head(`💛 ${esc(st.name)} 님의 꽃도감`)+`<div class="mb-body pick" id="mbbody"><div class="mb-tools"><input class="mb-in" id="mbq" type="search" autocomplete="off" placeholder="🔍 꽃 이름으로 찾기" value="${esc(st.q)}"/><div class="mb-count" id="mbcount"></div></div><p class="mb-p" style="margin-top:6px">가지고 있는 꽃을 눌러서 <b>✓ 체크</b>해 주세요. 다 고르면 아래 <b>저장하기</b>를 눌러요.</p><div class="mb-pills" id="mbrk"></div><div class="mb-pills" id="mbview"></div><div style="margin-top:8px"><button class="mb-link" data-a="jump" type="button">찾는 꽃이 목록에 없나요? 새 꽃 추가하기 ↓</button></div><div class="mb-grid" id="mbgrid">${cards}</div><div class="mb-p" id="mbempty" hidden style="text-align:center;margin-top:14px"></div>
-<div class="mb-add" id="mbadd"><h3>🌼 목록에 없는 꽃 추가하기</h3><p class="mb-p" style="margin:0 0 4px">꽃 이름과 등급을 적어 주세요. 사진이 있으면 같이 올려 주세요 (사진은 없어도 돼요).</p><div class="mb-row"><input class="mb-in" id="mbfn" autocomplete="off" placeholder="꽃 이름"/><select class="mb-in" id="mbfr">${RKS.map(r=>`<option${r==='SR'?' selected':''}>${r}</option>`).join('')}</select></div><div class="mb-row" style="align-items:center"><input id="mbfp" type="file" accept="image/*" class="mb-file"/><label class="mb-btn ghost" for="mbfp" style="margin:0">📷 사진 고르기</label><span id="mbfpn" class="mb-p" style="margin:0;flex:1 1 120px;word-break:break-all">선택한 사진 없음</span></div><div class="mb-row"><button class="mb-btn" data-a="addnew" type="button">➕ 이 꽃 추가하기</button></div><div id="mbnewlist"></div></div>
-<div style="text-align:center;margin:12px 0 6px"><button class="mb-link" data-a="rename" type="button">내 이름이 아니에요 (이름 다시 고르기)</button></div></div><div class="mb-foot"><button class="mb-btn ghost" data-a="x" type="button">닫기</button><button class="mb-btn main" id="mbsave" data-a="save" type="button">💾 저장하기</button></div>`;
-  drawPills();count();newList();applyFilter();
+  sheet.innerHTML=head(`💛 ${esc(st.name)} 님의 꽃도감`)+`<div class="mb-body pick" id="mbbody"><div class="mb-top"><button class="mb-btn" id="mbaddbtn" data-a="toggleadd" type="button">➕ 새 꽃 추가하기</button><button class="mb-btn ghost" data-a="rename" type="button">🔁 도감변경하기</button></div><div id="mbnewlist"></div><div class="mb-add" id="mbadd" hidden style="margin-top:10px"><h3>🌼 목록에 없는 꽃 추가하기</h3><p class="mb-p" style="margin:0 0 4px">꽃 이름과 등급을 적어 주세요. 사진이 있으면 같이 올려 주세요 (사진은 없어도 돼요).</p><div class="mb-row"><input class="mb-in" id="mbfn" autocomplete="off" placeholder="꽃 이름"/><select class="mb-in" id="mbfr">${RKS.map(r=>`<option${r==='SR'?' selected':''}>${r}</option>`).join('')}</select></div><div class="mb-row" style="align-items:center"><input id="mbfp" type="file" accept="image/*" class="mb-file"/><label class="mb-btn ghost" for="mbfp" style="margin:0">📷 사진 고르기</label><span id="mbfpn" class="mb-p" style="margin:0;flex:1 1 120px;word-break:break-all">선택한 사진 없음</span></div><div class="mb-row"><button class="mb-btn" data-a="addnew" type="button">➕ 이 꽃 추가하기</button></div></div><div class="mb-tools"><input class="mb-in" id="mbq" type="search" autocomplete="off" placeholder="🔍 꽃 이름으로 찾기" value="${esc(st.q)}"/><div class="mb-count" id="mbcount"></div></div><p class="mb-p" style="margin-top:6px">보유한 꽃을 눌러서 <b>✓ 체크</b>해 주세요. 다 고르면 아래 <b>저장하기</b>를 눌러요.</p><div class="mb-pills" id="mbrk"></div><div class="mb-pills" id="mbview"></div><div class="mb-grid" id="mbgrid">${cards}</div><div class="mb-p" id="mbempty" hidden style="text-align:center;margin-top:14px"></div></div><div class="mb-foot"><button class="mb-btn ghost" data-a="x" type="button">닫기</button><button class="mb-btn main" id="mbsave" data-a="save" type="button">💾 저장하기</button></div>`;
+  drawPills();count();newList();applyFilter();syncAdd(false);
 }
+function syncAdd(focus){const f=$('mbadd');if(!f)return;f.hidden=!st.addOpen;const bt=$('mbaddbtn');if(bt)bt.textContent=st.addOpen?'➖ 추가창 닫기':'➕ 새 꽃 추가하기';if(st.addOpen&&focus){$('mbbody').scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{const i=$('mbfn');if(i)i.focus()},150)}}
 function drawPills(){
   $('mbrk').innerHTML=['전체',...RKS].map(r=>`<button class="mb-pill${st.rk===r?' on':''}" data-a="rk" data-v="${r}" type="button">${r}</button>`).join('');
-  $('mbview').innerHTML=[['전체','전체 보기'],['mine','내가 가진 꽃'],['not','아직 없는 꽃']].map(x=>`<button class="mb-pill${st.view===x[0]?' on':''}" data-a="vw" data-v="${x[0]}" type="button">${x[1]}</button>`).join('');
+  $('mbview').innerHTML=[['mine','보유'],['not','미보유'],['전체','전체 보기']].map(x=>`<button class="mb-pill${st.view===x[0]?' on':''}" data-a="vw" data-v="${x[0]}" type="button">${x[1]}</button>`).join('');
 }
 function count(){
   const el=$('mbcount');if(!el)return;
   const a=[...st.owned].filter(n=>!st.init.has(n)).length,r=[...st.init].filter(n=>!st.owned.has(n)).length,nw=st.added.length;
-  el.textContent='✓ 가진 꽃 '+(st.owned.size+nw)+'개'+((a||r||nw)?'  ·  저장 전 변경: '+((a+nw)?'+'+(a+nw):'')+(r?(a+nw?' ':'')+'−'+r:''):'');
+  el.textContent='✓ 보유 '+(st.owned.size+nw)+'개'+((a||r||nw)?'  ·  저장 전 변경: '+((a+nw)?'+'+(a+nw):'')+(r?(a+nw?' ':'')+'−'+r:''):'');
 }
 function applyFilter(){
   const q=nz(st.q).toLowerCase();let shown=0;
@@ -168,7 +167,7 @@ async function login(){
 }
 function pickName(name){
   st.name=name;if(D.books.includes(name))LS.set('gd_mname',name);
-  loadOwned();st.q='';st.rk='전체';st.view='전체';st.step='pick';draw();
+  loadOwned();st.q='';st.rk='전체';st.step='pick';draw();
 }
 function newName(){
   const v=($('mbnew').value||'').trim().replace(/\s+/g,' '),err=$('mberr');
@@ -186,7 +185,7 @@ async function addNew(){
   if(!name){toast('꽃 이름을 적어 주세요.');inp.focus();return}
   if(name.length>60){toast('꽃 이름이 너무 길어요.');return}
   const dup=D.flowers.find(f=>nz(f.name)===nz(name));
-  if(dup){toast('이미 목록에 있는 꽃이에요. 위 목록에서 체크해 주세요.');st.q=dup.name;const q=$('mbq');if(q)q.value=dup.name;st.rk='전체';st.view='전체';drawPills();applyFilter();$('mbbody').scrollTo({top:0,behavior:'smooth'});return}
+  if(dup){toast('이미 목록에 있는 꽃이에요. 위 목록에서 체크해 주세요.');st.q=dup.name;const q=$('mbq');if(q)q.value=dup.name;st.rk='전체';st.view='전체';st.addOpen=false;syncAdd(false);drawPills();applyFilter();$('mbbody').scrollTo({top:0,behavior:'smooth'});return}
   if(st.added.some(f=>nz(f.name)===nz(name))){toast('이미 추가한 꽃이에요.');return}
   const file=$('mbfp').files&&$('mbfp').files[0];let dataUrl=null;
   if(file){if(!/^image\//.test(file.type)){toast('사진은 이미지 파일만 올릴 수 있어요.');return}dataUrl=await readImg(file);if(!dataUrl){toast('사진을 읽지 못했어요. 다른 사진으로 해 주세요.');return}}
@@ -195,7 +194,9 @@ async function addNew(){
 }
 async function save(){
   const add=[...st.owned].filter(n=>!st.init.has(n)),remove=[...st.init].filter(n=>!st.owned.has(n));
-  if(!add.length&&!remove.length&&!st.added.length){toast('바뀐 게 없어요.');return}
+  if(!add.length&&!remove.length&&!st.added.length){toast('변경된 꽃이 없습니다.');return}
+  const none='없음',nn=st.added.length;
+  if(!confirm('새로 추가한 꽃: '+(nn?nn+'개':none)+'\n새로 ✓ 체크한 꽃: '+(add.length?add.length+'개':none)+(remove.length?'\n체크를 푼 꽃: '+remove.length+'개':'')+'\n\n저장하시겠습니까?'))return;
   const btn=$('mbsave');btn.disabled=true;btn.textContent='저장하는 중...';
   const body={p_pw:st.pw,p_member:st.name,p_add:add,p_remove:remove,p_new:st.added.map(f=>({name:f.name,rank:f.rank}))};
   if(!serverHasData)body.p_base={books:D.books,flowers:D.flowers,urls:D.urls};
@@ -221,11 +222,11 @@ function onClick(e){
   else if(a==='tg')toggle(b);
   else if(a==='rk'){st.rk=b.dataset.v;drawPills();applyFilter()}
   else if(a==='vw'){st.view=b.dataset.v;drawPills();applyFilter()}
-  else if(a==='useq'){const f=$('mbfn');f.value=st.q.trim();$('mbadd').scrollIntoView({behavior:'smooth',block:'start'});f.focus()}
-  else if(a==='jump')$('mbadd').scrollIntoView({behavior:'smooth',block:'start'});
+  else if(a==='useq'){st.addOpen=true;syncAdd(true);$('mbfn').value=st.q.trim()}
+  else if(a==='toggleadd'){st.addOpen=!st.addOpen;syncAdd(true)}
   else if(a==='addnew')addNew();
   else if(a==='rmnew'){st.added.splice(+b.dataset.i,1);newList();count()}
-  else if(a==='rename'){if(dirty()&&!confirm('저장하지 않은 변경이 있어요.\n그래도 이름을 다시 고를까요?'))return;st.step='name';draw()}
+  else if(a==='rename'){if(dirty()&&!confirm('저장하지 않은 변경이 있어요.\n그래도 도감을 바꿀까요?'))return;st.step='name';draw()}
   else if(a==='save')save();
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box)close()});
