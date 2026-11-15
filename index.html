@@ -397,7 +397,7 @@ function draw(){
   sh.innerHTML=head('❓ 자주묻는질문 Q&A')+'<div class="mb-body">'+body+'</div>'+foot;
   const nb=sh.querySelector('.mb-body');if(nb)nb.scrollTop=sy;
 }
-const errMsg=e=>{const m=String(e&&e.message);return /wrong password/.test(m)?'권한이 없어요.':/not active/.test(m)?'답변 가능으로 켜진 길드원만 답변할 수 있어요.':/too many/.test(m)?'잠시 후 다시 시도해 주세요.':/PGRST202|Could not find/.test(m)?'서버 설정(supabase_setup_part7.sql)을 다시 실행해 주세요.':'처리하지 못했어요. 잠시 후 다시 시도해 주세요.'};
+const errMsg=e=>{const m=String(e&&e.message);return /wrong password/.test(m)?'권한이 없어요.':/not active/.test(m)?'답변 가능으로 켜진 길드원만 답변할 수 있어요.':/too many/.test(m)?'잠시 후 다시 시도해 주세요.':/PGRST202|Could not find/.test(m)?'서버 설정을 확인해 주세요. ['+m.replace(/\s+/g,' ').slice(0,200)+']':'처리하지 못했어요. ['+m.replace(/\s+/g,' ').slice(0,200)+']'};
 async function onClick(e){
   const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,sh=box.firstChild;
   if(a==='x'){close();return}
