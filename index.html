@@ -66,7 +66,14 @@ h1,h1 *{font-family:"Jua","BM JUA","Apple SD Gothic Neo","Malgun Gothic",sans-se
 .hero .search-row .sw{flex:1 1 100%}
 .hero .search-row{flex-wrap:wrap}.hero .search-row .sw{flex:1 1 100%}.hero .search-row .search{flex:1 1 40%}.hero .search-row .sw .search{flex:1 1 auto}.hero .search-row .member-btn{flex:1 1 40%}
 .hero .search-row .sw2{flex:1 1 40%}.hero .search-row .sw2 .search{flex:1 1 auto}.mb-sw{position:relative;display:flex}.mb-sw .mb-in{width:100%;padding-right:38px;box-sizing:border-box}
-</style></head><body><div class="wrap"><header class="hero"><div class="hero-row"><h1>💛 같이 ʕ·ᴥ·ʔ 💛</h1><button class="admin-btn" id="adminOpen" type="button">🔐 관리자 모드</button></div><div class="search-row"><span class="sw"><input autocomplete="off" class="search" id="q" placeholder="꽃 이름검색(자음 검색가능)" type="search"/><button class="mic" id="micBtn" type="button" aria-label="음성으로 검색" hidden>🎤</button></span><span class="sw sw2"><input autocomplete="off" class="search" id="qb" placeholder="이름 검색" type="search"/><button class="mic" id="micBtn2" type="button" aria-label="음성으로 이름 검색" hidden>🎤</button></span><button class="member-btn" id="memberOpen" type="button">나의도감관리🖤</button></div></header>
+.hero .search-row .sw:not(.sw2){flex:1 1 0%;min-width:0}.hero .search-row .faq-btn{flex:0 0 auto;background:#fff3c9;border-color:#f0d37a;color:#8a6a10;padding:0 9px}
+.hero .search-row .brk{flex:0 0 100%;height:0;margin:-8px 0 0}.faq-tabs{display:flex;gap:6px;margin:10px 0}.faq-tabs button{flex:1 1 0;border:1px solid #e6d6dc;background:#fff;color:#8a6572;border-radius:999px;padding:7px 4px;font:inherit;font-size:14px;cursor:pointer}.faq-tabs button.on{background:#f48fb1;border-color:#f48fb1;color:#fff}
+.faq-it{border:1px solid #f0e3e8;border-radius:14px;margin:10px 0;background:#fff;overflow:hidden}.faq-it summary{list-style:none;cursor:pointer;padding:12px 14px;font-size:16px;font-weight:600;color:#6b4a58;display:flex;gap:8px;align-items:flex-start}.faq-it summary::-webkit-details-marker{display:none}.faq-it summary:before{content:"Q.";color:#f06292;font-weight:800}.faq-it summary span.t{flex:1 1 auto;min-width:0;word-break:break-word}.faq-it[open] summary{background:#fff5f8}
+.faq-bd{display:inline-block;flex:0 0 auto;font-size:12px;font-weight:600;border-radius:999px;padding:2px 8px;background:#e8f1ff;color:#2f6fd0}.faq-bd.w{background:#fff0d6;color:#b07a10}
+.faq-b{padding:10px 14px 14px;border-top:1px dashed #f0e3e8;font-size:16px;line-height:1.6;color:#5a4650;word-break:break-word}.faq-meta{font-size:12.5px;color:#9a8790;margin-bottom:6px}.faq-qt,.faq-at{white-space:pre-wrap}.faq-at{margin-top:8px;padding:10px;border-radius:10px;background:#f3f8ff}.faq-at:before{content:"A. ";color:#2f6fd0;font-weight:800}.faq-wait{margin-top:8px;color:#b07a10;font-size:14px}.faq-b a{color:#a8416a}
+.faq-act{display:flex;gap:6px;margin-top:10px}.faq-act button{border:1px solid #e6d6dc;background:#fff;color:#8a6572;border-radius:10px;padding:7px 10px;font:inherit;font-size:14px;cursor:pointer}.faq-act .ans{background:#e8f1ff;border-color:#bcd6fa;color:#2f6fd0}
+.faq-form{margin-top:10px}.faq-form input,.faq-form select,.faq-form textarea{width:100%;box-sizing:border-box;border:1px solid #e6d6dc;border-radius:10px;padding:10px;font:inherit;font-size:16px;margin-bottom:6px;background:#fff}.faq-form textarea{min-height:100px;resize:vertical}.faq-form .hint{font-size:13px;color:#9a8790;margin:0 0 8px}.faq-empty{text-align:center;color:#9a8790;padding:30px 10px;font-size:16px}
+</style></head><body><div class="wrap"><header class="hero"><div class="hero-row"><h1>💛 같이 ʕ·ᴥ·ʔ 💛</h1><button class="admin-btn" id="adminOpen" type="button">🔐 관리자 모드</button></div><div class="search-row"><span class="sw"><input autocomplete="off" class="search" id="q" placeholder="꽃 이름검색(자음 검색가능)" type="search"/><button class="mic" id="micBtn" type="button" aria-label="음성으로 검색" hidden>🎤</button></span><button class="member-btn faq-btn" id="faqOpen" type="button">❓ 자주묻는질문</button><span class="brk"></span><span class="sw sw2"><input autocomplete="off" class="search" id="qb" placeholder="이름 검색" type="search"/><button class="mic" id="micBtn2" type="button" aria-label="음성으로 이름 검색" hidden>🎤</button></span><button class="member-btn" id="memberOpen" type="button">나의도감관리🖤</button></div></header>
 <section class="admin-area" id="adminLogin" hidden aria-label="관리자 로그인"><h2>🔐 관리자 로그인</h2><p>관리자 비밀번호를 입력해 주세요.</p><div class="admin-row"><input id="adminPassword" type="password" inputmode="numeric" autocomplete="off" placeholder="비밀번호" aria-label="관리자 비밀번호"/><button class="admin-action primary" id="adminLoginBtn" type="button">로그인</button></div><div class="admin-status" id="loginStatus" aria-live="polite"></div></section>
 <section class="admin-area" id="adminPanel" hidden aria-label="길드원 관리자"><h2>💛 길드원 일괄 관리</h2><p>한 줄에 한 항목씩 입력해 주세요. 변경 전 목록을 확인하고 실행하세요.</p><div class="admin-note">☁️ 아래에서 바꾼 내용은 Supabase 서버에 자동으로 저장돼서 모든 방문자에게 바로 보여요. HTML 파일을 다시 올릴 필요가 없어요.</div>
 <div class="admin-grid">
@@ -78,6 +85,7 @@ h1,h1 *{font-family:"Jua","BM JUA","Apple SD Gothic Neo","Malgun Gothic",sans-se
 <div><h3>🌼 꽃 정보 일괄 등록</h3><p>한 줄마다 길드원,꽃 이름,등급 형식으로 입력하세요. 등급은 UR / SSR / SR / R / N 중 하나예요. 이미 있는 꽃 이름이면 해당 길드원 소유 목록에 추가됩니다.</p><textarea id="addFlowers" placeholder="예시:&#10;새길드원1,별빛 장미,SSR&#10;새길드원2,달빛 튤립,SR"></textarea><p style="margin-top:10px">📷 사진 첨부(선택): 사진 파일 이름을 꽃 이름과 똑같이 해 주세요. 예) 별빛 꿈의 방주.jpg (여러 장 가능). 위에 꽃을 한 종류만 적고 사진도 한 장이면 이름이 달라도 그 꽃에 붙어요. 이미 있는 꽃은 사진만 올려도 교체돼요.</p><input accept="image/*" id="addFlowerImages" multiple type="file" style="margin:4px 0 8px;max-width:100%"/><div class="admin-row"><button class="admin-action primary" id="addFlowersBtn" type="button">꽃 정보 등록</button></div></div>
 <div><h3>✏️ 꽃 이름 일괄 수정</h3><p>한 줄마다 기존 꽃 이름,새 꽃 이름 형식으로 입력하세요. 사진과 등급, 가진 길드원은 그대로 따라가요.</p><textarea id="renameFlowers" placeholder="예시:&#10;별빛 장미,별빛 장미꽃&#10;달빛 튤립,달빛 튤립꽃"></textarea><div class="admin-row"><button class="admin-action primary" id="renameFlowersBtn" type="button">꽃 이름 수정</button></div></div>
 <div><h3>🗑️ 꽃 일괄 삭제</h3><p>한 줄에 꽃 이름만 쓰면 그 꽃이 통째로 삭제돼요(사진 포함). 길드원,꽃 이름으로 쓰면 그 길드원이 가진 꽃에서만 빠지고, 가진 사람이 없어지면 꽃도 삭제돼요.</p><textarea id="deleteFlowers" placeholder="예시:&#10;별빛 장미&#10;보니,달빛 튤립"></textarea><div class="admin-row"><button class="admin-action danger" id="deleteFlowersBtn" type="button">선택한 꽃 삭제</button></div></div>
+<div><h3>💬 Q&A 답변 가능 길드원</h3><p>이름을 눌러 켜진(파란색) 사람만 자주묻는질문에 답변을 달 수 있어요. 답변할 때는 <b>관리자 모드 비밀번호</b>를 입력해야 해요.</p><div class="hide-list" id="faqActList"></div><p id="faqActCount" style="margin:8px 0 0"></p></div>
 <div><h3>🔑 언니들 공용 비밀번호</h3><p>"나의도감관리🖤"에 들어갈 때 쓰는 비밀번호예요. 관리자 비밀번호와는 따로이고, 이걸로는 삭제·이름 수정을 할 수 없어요. 바꾸면 언니들에게 새 비밀번호를 알려 주세요.</p><input id="memberPwNew" type="text" autocomplete="off" placeholder="새 공용 비밀번호 (2글자 이상)"/><div class="admin-row"><button class="admin-action primary" id="memberPwBtn" type="button">공용 비밀번호 바꾸기</button></div></div>
 </div>
 <h3>☁️ 서버 저장 / 백업</h3><p>위 기능을 쓰면 자동으로 서버에 저장돼요. 처음이거나 저장이 잘 됐는지 모르겠으면 "지금 서버에 저장"을 눌러 주세요. 백업이 필요하면 HTML을 내려받을 수 있어요.</p><div class="admin-row"><button class="admin-action primary" id="saveServerBtn" type="button">☁️ 지금 서버에 저장</button><button class="admin-action" id="exportHtmlBtn" type="button">백업용 HTML 다운로드</button><button class="admin-action" id="adminLogoutBtn" type="button">관리자 로그아웃</button></div><div class="admin-status" id="saveStatus" aria-live="polite"></div><div class="admin-status" id="adminStatus" aria-live="polite">관리자 기능을 사용할 수 있어요.</div></section>
@@ -92,8 +100,8 @@ const sbPub=path=>SBBASE+'/storage/v1/object/public/flower-photos/'+path;
 const toast=msg=>{const t=document.createElement('div');t.className='toast';t.textContent=msg;if(document.querySelector('.mb'))t.style.bottom='104px';document.body.appendChild(t);setTimeout(()=>t.remove(),3200)};
 async function sbLoad(){if(!SB)return;try{const r=await fetch(SBBASE+'/rest/v1/flower_photos?select=flower_name,path',{headers:sbH()});if(!r.ok)return;const rows=await r.json();DBIMG={};rows.forEach(x=>{DBIMG[x.flower_name]=sbPub(x.path)});render();}catch(e){}}
 async function sbUpload(name,dataUrl){try{const blob=await (await fetch(dataUrl)).blob();const path=Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.jpg';let r=await fetch(SBBASE+'/storage/v1/object/flower-photos/'+path,{method:'POST',headers:sbH({'Content-Type':'image/jpeg'}),body:blob});if(!r.ok)return {ok:false,msg:'사진 업로드에 실패했어요. 잠시 후 다시 시도해 주세요.'};r=await fetch(SBBASE+'/rest/v1/flower_photos',{method:'POST',headers:sbH({'Content-Type':'application/json',Prefer:'return=minimal'}),body:JSON.stringify({flower_name:name,path})});if(r.status===409)return {ok:false,msg:'이미 다른 분이 사진을 올렸어요. 새로고침해 주세요.'};if(!r.ok)return {ok:false,msg:'사진 저장에 실패했어요. 잠시 후 다시 시도해 주세요.'};DBIMG[name]=sbPub(path);return {ok:true};}catch(e){return {ok:false,msg:'네트워크 오류가 났어요.'}}}
-async function sbLoadData(){if(!SB)return;try{const r=await fetch(SBBASE+'/rest/v1/site_data?id=eq.main&select=data',{headers:sbH()});if(!r.ok)return;const rows=await r.json();const d=rows[0]&&rows[0].data;if(d&&Array.isArray(d.books)&&Array.isArray(d.flowers)){D.books=d.books;D.flowers=d.flowers;D.urls=d.urls||{};D.hidden=Array.isArray(d.hidden)?d.hidden:[];if(Array.isArray(d.soul2Default))D.soul2Default=d.soul2Default;serverHasData=true;if(book!=='전체'&&!D.books.includes(book))book='전체';controls();stats();render();}}catch(e){}}
-async function sbPersist(){const el=$('saveStatus');if(!SB){el.textContent='ℹ️ Supabase가 연결되지 않아 이 화면에서만 적용돼요.';return false;}if(!adminPw)return false;el.textContent='☁️ 서버에 저장하는 중...';try{await sbRpc('save_site_data',{p_pw:adminPw,p_data:{books:D.books,flowers:D.flowers,urls:D.urls,hidden:D.hidden||[],soul2Default:D.soul2Default||[]}});el.textContent='☁️ 서버에 저장됐어요. 모든 방문자에게 바로 보여요 💛 ('+new Date().toLocaleTimeString('ko-KR')+')';return true;}catch(e){el.textContent='⚠️ 서버 저장에 실패했어요. 변경은 이 화면에만 적용됐어요. 인터넷 연결과 Supabase 설정(추가 SQL 실행 여부)을 확인해 주세요.';return false;}}
+async function sbLoadData(){if(!SB)return;try{const r=await fetch(SBBASE+'/rest/v1/site_data?id=eq.main&select=data',{headers:sbH()});if(!r.ok)return;const rows=await r.json();const d=rows[0]&&rows[0].data;if(d&&Array.isArray(d.books)&&Array.isArray(d.flowers)){D.books=d.books;D.flowers=d.flowers;D.urls=d.urls||{};D.hidden=Array.isArray(d.hidden)?d.hidden:[];if(Array.isArray(d.soul2Default))D.soul2Default=d.soul2Default;if(Array.isArray(d.faqActive))D.faqActive=d.faqActive;serverHasData=true;if(book!=='전체'&&!D.books.includes(book))book='전체';controls();stats();render();}}catch(e){}}
+async function sbPersist(){const el=$('saveStatus');if(!SB){el.textContent='ℹ️ Supabase가 연결되지 않아 이 화면에서만 적용돼요.';return false;}if(!adminPw)return false;el.textContent='☁️ 서버에 저장하는 중...';try{await sbRpc('save_site_data',{p_pw:adminPw,p_data:{books:D.books,flowers:D.flowers,urls:D.urls,hidden:D.hidden||[],soul2Default:D.soul2Default||[],faqActive:D.faqActive||[]}});el.textContent='☁️ 서버에 저장됐어요. 모든 방문자에게 바로 보여요 💛 ('+new Date().toLocaleTimeString('ko-KR')+')';return true;}catch(e){el.textContent='⚠️ 서버 저장에 실패했어요. 변경은 이 화면에만 적용됐어요. 인터넷 연결과 Supabase 설정(추가 SQL 실행 여부)을 확인해 주세요.';return false;}}
 async function sbRpc(fn,body){const r=await fetch(SBBASE+'/rest/v1/rpc/'+fn,{method:'POST',headers:sbH({'Content-Type':'application/json'}),body:JSON.stringify(body)});if(!r.ok){let t='';try{t=await r.text()}catch(e){}throw new Error(t||('HTTP '+r.status))}const t=await r.text();return t?JSON.parse(t):null}
 const sbCheck=pw=>sbRpc('check_admin',{p_pw:pw});
 const sbDelete=async name=>{await sbRpc('delete_flower_photo',{p_name:name,p_pw:adminPw});delete DBIMG[name]};
@@ -144,7 +152,8 @@ function soul2Draw(){const r=$('ranks'),p=$('soulPanel2');if(!r||!p)return;
   p.querySelectorAll('.soul-chip').forEach(c=>c.onclick=()=>soul2Toggle(c.dataset.n));
   const rb=p.querySelector('.soul-reset');rb.onclick=()=>{if(Date.now()-soul2Arm<4000){soul2Arm=0;soul2Reset();return}soul2Arm=Date.now();rb.textContent='한 번 더 누르면 모두 초기화돼요';rb.classList.add('arm');setTimeout(()=>{if(soul2Arm&&Date.now()-soul2Arm>=3900){soul2Arm=0;rb.textContent='초기화';rb.classList.remove('arm')}},4000)};}
 function controls(){D.hidden=(D.hidden||[]).filter(n=>D.books.includes(n));hideChips();pills('ranks',['전체',...order],rank,v=>{rank=v;controls();render()});pills('books',['전체',...D.books],book,v=>{book=v;controls();render()});buildLinks();soulDraw();soul2Draw()}function s2DefChips(){const el=$('s2DefList');if(!el)return;const d=D.soul2Default||[];el.innerHTML=D.books.map(b=>`<button type="button" class="hchip${d.includes(b)?' on':''}" data-b="${esc(b)}">${esc(b)}</button>`).join('');const c=$('s2DefCount');if(c)c.textContent='기본 활성 '+D.books.filter(b=>d.includes(b)).length+'명: '+(D.books.filter(b=>d.includes(b)).join(', ')||'없음')}
-function hideChips(){s2DefChips();const el=$('hideList');if(!el)return;el.innerHTML=D.books.map(b=>`<button type="button" class="hchip${hid(b)?' off':''}" data-b="${esc(b)}">${hid(b)?'🙈 ':''}${esc(b)}</button>`).join('');const c=$('hideCount');if(c)c.textContent=(D.hidden||[]).length?'숨김 중: '+D.hidden.join(', '):'숨긴 길드원이 없어요.'}
+function faqActChips(){const el=$('faqActList');if(!el)return;const d=D.faqActive||[];el.innerHTML=D.books.map(b=>`<button type="button" class="hchip${d.includes(b)?' on':''}" data-b="${esc(b)}">${esc(b)}</button>`).join('');const c=$('faqActCount'),a=D.books.filter(b=>d.includes(b));if(c)c.textContent='답변 가능 '+a.length+'명: '+(a.join(', ')||'없음')}
+function hideChips(){s2DefChips();faqActChips();const el=$('hideList');if(!el)return;el.innerHTML=D.books.map(b=>`<button type="button" class="hchip${hid(b)?' off':''}" data-b="${esc(b)}">${hid(b)?'🙈 ':''}${esc(b)}</button>`).join('');const c=$('hideCount');if(c)c.textContent=(D.hidden||[]).length?'숨김 중: '+D.hidden.join(', '):'숨긴 길드원이 없어요.'}
 function stats(){$('stats').innerHTML=[['전체 꽃',D.flowers.length],...order.slice(0,3).map(r=>[r,D.flowers.filter(f=>f.rank===r).length])].map(x=>`<div class="stat"><b>${x[1]}</b><span>${x[0]}</span></div>`).join('')}function render(){const q=$('q').value.trim().toLocaleLowerCase(),qb=$('qb').value.trim().toLocaleLowerCase();const arr=D.flowers.filter(f=>(!q||cm(f.name,q))&&(!qb||f.books.some(b=>!hid(b)&&cm(b,qb)))&&(rank==='전체'||f.rank===rank)&&(book==='전체'||f.books.includes(book))).map((f,i)=>[f,i]).sort((x,y)=>order.indexOf(x[0].rank)-order.indexOf(y[0].rank)||x[1]-y[1]).map(x=>x[0]);$('count').textContent=`${arr.length}종 표시 · 중복 꽃은 한 번만 표시`;$('results').innerHTML=arr.length?arr.map(f=>`<article class="flower"><div class="top"><span class="name">${esc(f.name)}</span><span class="rank ${esc(f.rank)}">${esc(f.rank)}${f.rank==='UR'?' '+(f.score||28)+'점':f.rank==='SSR'?' '+(f.score||25)+'점':''}</span></div>${(DBIMG[f.name]||IMG[f.name])?`<img alt="${esc(f.name)}" class="flower-image" loading="lazy" src="${DBIMG[f.name]||IMG[f.name]}"/>`:''}<div class="tags n${Math.min((book==='전체'?f.books.filter(b=>!hid(b)):[book]).length,3)}">${(book==='전체'?f.books.filter(b=>!hid(b)):[book]).map(b=>`<span class="tag">${esc(b)}</span>`).join('')}</div>${SB&&!(DBIMG[f.name]||IMG[f.name])?`<button class="photo-add" data-a="add" data-n="${esc(f.name)}" type="button">📷 사진 올리기</button>`:''}${SB&&adminPw&&DBIMG[f.name]?`<button class="photo-del" data-a="del" data-n="${esc(f.name)}" type="button">🗑 사진 삭제(관리자)</button>`:''}</article>`).join(''):'<div class="empty">검색 결과가 없어요 🥺<br>꽃 이름이나 필터를 바꿔서 찾아봐 주세요.</div>'}function buildLinks(){if(!$('links'))return;$('links').innerHTML=D.books.map(b=>`<a href="#results" data-b="${esc(b)}">${esc(b)}</a>`).join('');$('links').querySelectorAll('a[data-b]').forEach(a=>a.onclick=e=>{e.preventDefault();book=a.dataset.b;controls();render();$('results').scrollIntoView({behavior:'smooth'})});}buildLinks();$('q').addEventListener('input',render);$('qb').addEventListener('input',render);
 $('results').addEventListener('click',e=>{const b=e.target.closest('button[data-n]');if(!b)return;const name=b.dataset.n;if(b.dataset.a==='del'){if(!confirm('"'+name+'" 사진을 삭제할까요?'))return;sbDelete(name).then(()=>{toast('사진을 삭제했어요.');render()}).catch(()=>toast('삭제하지 못했어요.'));return;}const inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.onchange=async()=>{const file=inp.files[0];if(!file)return;if(!/^image\//.test(file.type)){toast('이미지 파일만 올릴 수 있어요.');return;}b.disabled=true;b.textContent='올리는 중...';const data=await readImg(file);if(!data){toast('이미지를 읽지 못했어요.');render();return;}const r=await sbUpload(name,data);toast(r.ok?'사진이 올라갔어요! 모두에게 보여요 💛':r.msg);if(r.ok)render();else sbLoad().then(()=>render());};inp.click();});
 const setAdminStatus=msg=>{$('adminStatus').textContent=msg};
@@ -162,6 +171,7 @@ const findFlower=n=>{const k=x=>String(x).replace(/\s+/g,'');return D.flowers.fi
 async function removeFlower(f,issues){const i=D.flowers.indexOf(f);if(i<0)return;D.flowers.splice(i,1);delete IMG[f.name];if(SB&&adminPw&&DBIMG[f.name]){try{await sbDelete(f.name)}catch(e){issues.push(f.name+': 서버에 올라온 사진은 지우지 못했어요')}}}
 $('renameFlowersBtn').addEventListener('click',async()=>{const pairs=lines('renameFlowers').map(l=>l.split(/[,，\t]/).map(x=>x.trim())).filter(p=>p.length>=2&&p[0]&&p[1]);if(!pairs.length){setAdminStatus('기존 꽃 이름,새 꽃 이름 형식으로 입력해 주세요.');return;}const done=[],issues=[];for(const [o,n] of pairs){const f=findFlower(o);if(!f){issues.push(o+': 등록된 꽃이 아님');continue;}if(f.name===n){issues.push(o+': 이름이 같아 건너뜀');continue;}if(D.flowers.some(x=>x!==f&&x.name===n)){issues.push(n+': 이미 있는 꽃 이름이라 건너뜀');continue;}const old=f.name;f.name=n;if(IMG[old]!==undefined){IMG[n]=IMG[old];delete IMG[old];}if(SB&&adminPw&&DBIMG[old]){try{await sbRpc('rename_flower_photo',{p_old:old,p_new:n,p_pw:adminPw});DBIMG[n]=DBIMG[old];delete DBIMG[old];}catch(e){issues.push(old+': 서버 사진 이름은 바꾸지 못했어요 (추가 SQL 실행이 필요해요)');}}done.push(old+' → '+n);}controls();stats();render();$('renameFlowers').value='';if(done.length)sbPersist();setAdminStatus((done.length?'꽃 이름 수정 완료:\n'+done.join('\n'):'수정된 꽃이 없어요.')+(issues.length?'\n\n확인 필요:\n'+issues.join('\n'):''));});
 $('deleteFlowersBtn').addEventListener('click',async()=>{const rows=lines('deleteFlowers').map(l=>l.split(/[,，\t]/).map(x=>x.trim()).filter(Boolean)).filter(r=>r.length);if(!rows.length){setAdminStatus('삭제할 꽃 이름을 입력해 주세요.');return;}const targets=[],issues=[];rows.forEach(r=>{if(r.length===1){const f=findFlower(r[0]);f?targets.push({f,member:null}):issues.push(r[0]+': 등록된 꽃이 아님');}else{const f=findFlower(r[1]);if(!f){issues.push(r[1]+': 등록된 꽃이 아님');return;}if(!(f.books||[]).includes(r[0])){issues.push(r[0]+' — '+f.name+': 그 길드원이 가진 꽃이 아님');return;}targets.push({f,member:r[0]});}});if(!targets.length){setAdminStatus('삭제할 항목이 없어요.'+(issues.length?'\n\n확인 필요:\n'+issues.join('\n'):''));return;}const label=targets.map(t=>t.member?t.member+' — '+t.f.name+' (이 길드원만 제거)':t.f.name+' (꽃 통째로 삭제)').join('\n');if(!confirm('다음을 삭제할까요?\n\n'+label))return;const done=[];for(const t of targets){const f=t.f;if(!D.flowers.includes(f))continue;if(t.member){f.books=f.books.filter(b=>b!==t.member);if(f.levels)delete f.levels[t.member];if(f.books.length===0){await removeFlower(f,issues);done.push(f.name+' (가진 사람이 없어 꽃도 삭제)');}else done.push(t.member+' — '+f.name+' 제거');}else{await removeFlower(f,issues);done.push(f.name+' 삭제');}}controls();stats();render();$('deleteFlowers').value='';if(done.length)sbPersist();setAdminStatus((done.length?'삭제 완료:\n'+done.join('\n'):'삭제된 항목이 없어요.')+'\n현재 꽃 '+D.flowers.length+'종'+(issues.length?'\n\n확인 필요:\n'+issues.join('\n'):''));});
+$('faqActList').addEventListener('click',e=>{const b=e.target.closest('[data-b]');if(!b)return;const n=b.dataset.b,d=D.faqActive||[];D.faqActive=d.includes(n)?d.filter(x=>x!==n):[...d,n];faqActChips();sbPersist();setAdminStatus('Q&A 답변 가능 길드원을 바꿨어요 💬')});
 $('memberPwBtn').addEventListener('click',async()=>{const v=$('memberPwNew').value.trim();if(!SB){setAdminStatus('Supabase가 연결되지 않았어요.');return;}if(v.length<2){setAdminStatus('공용 비밀번호는 2글자 이상으로 입력해 주세요.');return;}try{await sbRpc('set_member_password',{p_admin_pw:adminPw,p_new:v});$('memberPwNew').value='';setAdminStatus('공용 비밀번호를 바꿨어요.\n언니들에게 새 비밀번호를 알려 주세요: '+v);}catch(e){setAdminStatus(/PGRST202|Could not find/.test(String(e.message))?'서버 설정(supabase_setup_part4.sql)을 먼저 실행해 주세요.':'바꾸지 못했어요. 잠시 후 다시 시도해 주세요.');}});
 $('hideList').addEventListener('click',e=>{const b=e.target.closest('[data-b]');if(!b)return;const n=b.dataset.b;D.hidden=D.hidden||[];D.hidden=hid(n)?D.hidden.filter(x=>x!==n):[...D.hidden,n];hideChips();render();sbPersist();setAdminStatus(hid(n)?n+' 님을 숨겼어요 🙈':n+' 님이 다시 나타났어요 💛')});
 $('s2DefList').addEventListener('click',e=>{const b=e.target.closest('[data-b]');if(!b)return;const n=b.dataset.b,d=D.soul2Default||[];D.soul2Default=d.includes(n)?d.filter(x=>x!==n):[...d,n];s2DefChips();soul2Draw();sbPersist();setAdminStatus('잡수소울 기본 활성 인원을 바꿨어요 🌱')});
@@ -289,10 +299,10 @@ async function save(){
   if(!confirm('새로 추가한 꽃: '+(nn?nn+'개':none)+'\n새로 ✓ 체크한 꽃: '+(add.length?add.length+'개':none)+(remove.length?'\n체크를 푼 꽃: '+remove.length+'개':'')+'\n\n저장하시겠습니까?'))return;
   const btn=$('mbsave');btn.disabled=true;btn.textContent='저장하는 중...';
   const body={p_pw:st.pw,p_member:st.name,p_add:add,p_remove:remove,p_new:st.added.map(f=>({name:f.name,rank:f.rank}))};
-  if(!serverHasData)body.p_base={books:D.books,flowers:D.flowers,urls:D.urls,hidden:D.hidden||[],soul2Default:D.soul2Default||[]};
+  if(!serverHasData)body.p_base={books:D.books,flowers:D.flowers,urls:D.urls,hidden:D.hidden||[],soul2Default:D.soul2Default||[],faqActive:D.faqActive||[]};
   try{
     const d=await sbRpc('member_register',body);
-    if(d&&Array.isArray(d.books)&&Array.isArray(d.flowers)){D.books=d.books;D.flowers=d.flowers;D.urls=d.urls||{};D.hidden=Array.isArray(d.hidden)?d.hidden:[];if(Array.isArray(d.soul2Default))D.soul2Default=d.soul2Default;serverHasData=true}
+    if(d&&Array.isArray(d.books)&&Array.isArray(d.flowers)){D.books=d.books;D.flowers=d.flowers;D.urls=d.urls||{};D.hidden=Array.isArray(d.hidden)?d.hidden:[];if(Array.isArray(d.soul2Default))D.soul2Default=d.soul2Default;if(Array.isArray(d.faqActive))D.faqActive=d.faqActive;serverHasData=true}
     for(const f of st.added){if(f.dataUrl&&!DBIMG[f.name]&&!IMG[f.name]){await sbUpload(f.name,f.dataUrl)}}
     LS.set('gd_mname',st.name);
     st.added.forEach(f=>st.owned.add(f.name));st.init=new Set(st.owned);st.added=[];st.addOpen=false;
@@ -344,4 +354,99 @@ function micInit(btn,inp){if(!SRC||!btn||!inp||btn.dataset.mic)return;btn.datase
     try{rec.start()}catch(e){stop()}}}
 micInit(document.getElementById('micBtn'),document.getElementById('q'));
 micInit(document.getElementById('micBtn2'),document.getElementById('qb'));
+
+/* ===== 자주묻는질문 Q&A 팝업 ===== */
+(function(){
+const LS={get(k){try{return localStorage.getItem(k)||''}catch(e){return ''}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const head=t=>`<div class="mb-head"><span>${t}</span><button class="mb-x" data-a="x" type="button" aria-label="닫기">✕</button></div>`;
+const lk=t=>esc(t).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+const fd=t=>{try{return new Date(t).toLocaleDateString('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'})}catch(e){return ''}};
+D.faqActive=Array.isArray(D.faqActive)?D.faqActive:[];
+const dev=()=>{let k=LS.get('gd_fk');if(!k){k=Math.random().toString(36).slice(2)+Date.now().toString(36);LS.set('gd_fk',k)}return k};
+let box=null,rows=[],q='',tab='전체',mode='list',ans=null,opened=new Set(),timer=null,loaded=false;
+const close=()=>{if(!box)return;box.remove();box=null;clearInterval(timer);document.body.style.overflow=''};
+const actives=()=>D.books.filter(b=>(D.faqActive||[]).includes(b));
+async function load(){
+  if(!SB)return;
+  try{const r=await fetch(SBBASE+'/rest/v1/faq_qa?select=id,asker,q,a,answered_by,created_at,answered_at&order=id.desc&limit=300',{headers:sbH()});
+    if(!r.ok){loaded=true;if(box&&mode==='list')draw();return}
+    const d=await r.json();if(Array.isArray(d)){rows=d;loaded=true;if(box&&mode==='list'&&ans===null&&qed===null)draw()}}catch(e){}
+}
+const mine=()=>{try{return JSON.parse(LS.get('gd_myq')||'[]')}catch(e){return []}};
+const canEd=f=>!!adminPw||(!f.a&&mine().includes(f.id));
+let qed=null;
+const canDel=f=>!!adminPw||(!f.a&&mine().includes(f.id));
+function item(f){
+  const isAns=ans===f.id,act=actives();
+  const form=isAns?(act.length?`<div class="faq-form" data-id="${f.id}"><select class="fnm"><option value="">답변하는 사람 선택</option>${act.map(n=>`<option${n===(f.answered_by||LS.get('gd_aname'))?' selected':''}>${esc(n)}</option>`).join('')}</select><textarea class="ftx" placeholder="답변을 적어 주세요">${esc(f.a||'')}</textarea><div class="faq-act"><button type="button" data-a="acancel">취소</button><button type="button" class="ans" data-a="asend">답변 등록</button></div></div>`:`<div class="faq-form"><p class="hint">지금 답변할 수 있는 길드원이 없어요. 관리자 모드에서 "Q&A 답변 가능 길드원"을 켜 주세요.</p><div class="faq-act"><button type="button" data-a="acancel">닫기</button></div></div>`):'';
+  const isQ=qed===f.id;
+  return `<details class="faq-it" data-id="${f.id}"${opened.has(f.id)||isAns||isQ?' open':''}><summary><span class="t">${esc(f.q)}</span><span class="faq-bd${f.a?'':' w'}">${f.a?'답변완료':'답변대기'}</span></summary><div class="faq-b"><div class="faq-meta">${fd(f.created_at)}</div>${isQ?`<div class="faq-form" data-id="${f.id}"><textarea class="fqe" maxlength="500">${esc(f.q)}</textarea><div class="faq-act"><button type="button" data-a="qcancel">취소</button><button type="button" class="ans" data-a="qsend">질문 수정 저장</button></div></div>`:`<div class="faq-qt">${lk(f.q)}</div>`}${f.a?`<div class="faq-at">${lk(f.a)}</div><div class="faq-meta" style="margin-top:4px">답변: ${esc(f.answered_by||'')} · ${fd(f.answered_at)}</div>`:'<div class="faq-wait">⏳ 아직 답변이 없어요</div>'}${isAns?form:isQ?'':`<div class="faq-act"><button type="button" class="ans" data-a="ans" data-id="${f.id}">${f.a?'✏️ 답변 수정':'💬 답변하기'}</button>${canEd(f)?`<button type="button" data-a="qedit" data-id="${f.id}">✏️ 질문 수정</button>`:''}${canDel(f)?`<button type="button" data-a="del" data-id="${f.id}">🗑️ 삭제</button>`:''}</div>`}</div></details>`;
+}
+function draw(){
+  if(!box)return;const sh=box.firstChild,old=sh.querySelector('.mb-body'),sy=old?old.scrollTop:0;
+  let body,foot;
+  if(mode==='ask'){
+    body=`<div class="faq-form"><textarea id="fqtx" maxlength="500" placeholder="궁금한 점을 적어 주세요 (500자까지)"></textarea><div class="mb-err" id="fqerr" style="color:#c0392b;font-size:14px"></div></div>`;
+    foot='<div class="mb-foot"><button class="mb-btn ghost" data-a="back" type="button">취소</button><button class="mb-btn main" data-a="send" type="button">질문 등록</button></div>';
+  }else{
+    const list=rows.filter(f=>(tab==='전체'||(tab==='답변완료'?!!f.a:!f.a))&&(!q||cm(f.q+' '+(f.a||''),q)));
+    const c=t=>t==='전체'?rows.length:rows.filter(f=>t==='답변완료'?!!f.a:!f.a).length;
+    body=`<input class="mb-in" id="faqq" type="search" autocomplete="off" placeholder="질문 검색(자음 검색가능)" value="${esc(q)}"/><div class="faq-tabs">${['전체','답변완료','답변대기'].map(t=>`<button type="button" data-a="tab" data-t="${t}" class="${tab===t?'on':''}">${t} ${c(t)}</button>`).join('')}</div>`+(list.length?list.map(item).join(''):`<div class="faq-empty">${!loaded?'불러오는 중...':rows.length?'해당하는 질문이 없어요.':'아직 질문이 없어요. 첫 질문을 남겨 보세요 💛'}</div>`);
+    foot='<div class="mb-foot"><button class="mb-btn main" data-a="ask" type="button">✍️ 질문하기</button></div>';
+  }
+  sh.innerHTML=head('❓ 자주묻는질문 Q&A')+'<div class="mb-body">'+body+'</div>'+foot;
+  const nb=sh.querySelector('.mb-body');if(nb)nb.scrollTop=sy;
+}
+const errMsg=e=>{const m=String(e&&e.message);return /wrong password/.test(m)?'권한이 없어요.':/not active/.test(m)?'답변 가능으로 켜진 길드원만 답변할 수 있어요.':/too many/.test(m)?'잠시 후 다시 시도해 주세요.':/PGRST202|Could not find/.test(m)?'서버 설정(supabase_setup_part7.sql)을 다시 실행해 주세요.':'처리하지 못했어요. 잠시 후 다시 시도해 주세요.'};
+async function onClick(e){
+  const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,sh=box.firstChild;
+  if(a==='x'){close();return}
+  if(a==='tab'){tab=b.dataset.t;draw();return}
+  if(a==='ask'){mode='ask';draw();return}
+  if(a==='back'){mode='list';draw();return}
+  if(a==='ans'){ans=+b.dataset.id;qed=null;opened.add(ans);draw();return}
+  if(a==='qedit'){qed=+b.dataset.id;ans=null;opened.add(qed);draw();return}
+  if(a==='qcancel'){qed=null;draw();return}
+  if(a==='qsend'){
+    const fm=b.closest('.faq-form'),id=+fm.dataset.id,tx=fm.querySelector('.fqe').value.trim();
+    if(tx.length<2){toast('질문을 2글자 이상 적어 주세요.');return}
+    b.disabled=true;b.textContent='저장하는 중...';
+    try{await sbRpc('faq_edit',{p_id:id,p_q:tx,p_admin_pw:adminPw||'',p_key:dev()});qed=null;await load();draw();toast('질문을 수정했어요 💛')}
+    catch(x){toast(errMsg(x));b.disabled=false;b.textContent='질문 수정 저장'}
+    return;
+  }
+  if(a==='acancel'){ans=null;draw();return}
+  if(a==='send'){
+    const tx=$('fqtx').value.trim(),er=$('fqerr');
+    if(tx.length<2){er.textContent='질문을 2글자 이상 적어 주세요.';return}
+    b.disabled=true;b.textContent='등록하는 중...';
+    try{const id=await sbRpc('faq_ask',{p_q:tx,p_key:dev()});if(id){const m=mine();m.push(+id);LS.set('gd_myq',JSON.stringify(m.slice(-50)))}mode='list';tab='전체';q='';await load();draw();toast('질문이 등록됐어요 💛')}
+    catch(x){er.textContent=errMsg(x);b.disabled=false;b.textContent='질문 등록'}
+    return;
+  }
+  if(a==='asend'){
+    const fm=b.closest('.faq-form'),id=+fm.dataset.id,nm=fm.querySelector('.fnm').value.trim(),tx=fm.querySelector('.ftx').value;
+    if(!nm){toast('답변하는 사람을 선택해 주세요.');return}
+    b.disabled=true;b.textContent='등록하는 중...';
+    try{await sbRpc('faq_answer',{p_id:id,p_name:nm,p_a:tx});if(nm)LS.set('gd_aname',nm);ans=null;opened.add(id);await load();draw();toast(tx.trim()?'답변이 등록됐어요 💛':'답변을 지웠어요.')}
+    catch(x){toast(errMsg(x));b.disabled=false;b.textContent='답변 등록'}
+    return;
+  }
+  if(a==='del'){
+    const id=+b.dataset.id;if(!confirm('이 질문을 삭제할까요?'))return;
+    try{await sbRpc('faq_delete',{p_id:id,p_admin_pw:adminPw||'',p_key:dev()});await load();draw();toast('삭제했어요.')}catch(x){toast(errMsg(x))}
+  }
+}
+function open(){
+  if(box)return;q='';tab='전체';mode='list';ans=null;
+  box=document.createElement('div');box.className='mb';box.innerHTML='<div class="mb-sheet" role="dialog" aria-modal="true"></div>';
+  document.body.appendChild(box);document.body.style.overflow='hidden';
+  box.addEventListener('click',e=>{if(e.target===box)close()});
+  box.firstChild.addEventListener('click',onClick);
+  box.firstChild.addEventListener('toggle',e=>{const d=e.target;if(d.classList&&d.classList.contains('faq-it')){const id=+d.dataset.id;d.open?opened.add(id):opened.delete(id)}},true);
+  box.firstChild.addEventListener('input',e=>{if(e.target.id==='faqq'){q=e.target.value;const p=e.target.selectionStart;draw();const n=$('faqq');if(n){n.focus();try{n.setSelectionRange(p,p)}catch(_){}}}});
+  draw();load();timer=setInterval(()=>{if(!document.hidden)load()},20000);
+}
+$('faqOpen').addEventListener('click',open);
+})();
 </script></body></html>
