@@ -66,9 +66,7 @@ h1,h1 *{font-family:"Jua","BM JUA","Apple SD Gothic Neo","Malgun Gothic",sans-se
 .hero .search-row .sw{flex:1 1 100%}
 .hero .search-row{flex-wrap:wrap}.hero .search-row .sw{flex:1 1 100%}.hero .search-row .search{flex:1 1 40%}.hero .search-row .sw .search{flex:1 1 auto}.hero .search-row .member-btn{flex:1 1 40%}
 .hero .search-row .sw2{flex:1 1 40%}.hero .search-row .sw2 .search{flex:1 1 auto}.mb-sw{position:relative;display:flex}.mb-sw .mb-in{width:100%;padding-right:38px;box-sizing:border-box}
-
-.faq-area{margin:14px 0;background:#f8fcff;border:1px solid #cfe1e9;border-radius:18px;padding:15px;box-shadow:0 8px 24px #a6c4d122;color:#496575}.faq-area[hidden]{display:none!important}.faq-area h2{font-size:19px;margin:0 0 8px;color:#426779}.faq-area h3{font-size:15px;margin:12px 0 6px}.faq-area p{font-size:12px;color:#718b98;margin:5px 0 10px}.faq-area input,.faq-area textarea,.faq-area select{box-sizing:border-box;width:100%;border:1px solid #cfe1e9;border-radius:12px;padding:10px 12px;font:inherit;color:#3d5968;background:#fff}.faq-area textarea{min-height:78px;resize:vertical}.faq-card{background:#fff;border:1px solid #dceaf0;border-radius:14px;padding:12px;margin:10px 0}.faq-q{font-size:14px;white-space:pre-wrap;line-height:1.6;color:#385565}.faq-meta{font-size:11px;color:#91a7b1;margin:5px 0 8px}.faq-answer{white-space:pre-wrap;background:#f2f8fb;border-radius:10px;padding:10px;margin-top:8px;font-size:13px;line-height:1.6}.faq-empty{padding:20px;text-align:center;color:#8ba1ad;font-size:13px}.faq-admin-tools{border-top:1px dashed #cbdfe8;margin-top:12px;padding-top:10px}.faq-admin-tools[hidden]{display:none!important}.faq-admin-tools .admin-row{margin-top:7px}.faq-admin-tools button,.faq-area button{font:inherit;cursor:pointer}.faq-admin-tools textarea{min-height:58px}.faq-card .admin-row{gap:6px}.faq-open{background:#eaf5fa!important;border-color:#c9e1eb!important;color:#52798a!important}
-</style></head><body><div class="wrap"><header class="hero"><div class="hero-row"><h1>💛 같이 ʕ·ᴥ·ʔ 💛</h1><button class="admin-btn" id="adminOpen" type="button">🔐 관리자 모드</button><button class="admin-btn faq-open" id="faqOpen" type="button">💌 자주 묻는 질문</button></div><div class="search-row"><span class="sw"><input autocomplete="off" class="search" id="q" placeholder="꽃 이름검색(자음 검색가능)" type="search"/><button class="mic" id="micBtn" type="button" aria-label="음성으로 검색" hidden>🎤</button></span><span class="sw sw2"><input autocomplete="off" class="search" id="qb" placeholder="이름 검색" type="search"/><button class="mic" id="micBtn2" type="button" aria-label="음성으로 이름 검색" hidden>🎤</button></span><button class="member-btn" id="memberOpen" type="button">나의도감관리🖤</button></div></header>
+</style></head><body><div class="wrap"><header class="hero"><div class="hero-row"><h1>💛 같이 ʕ·ᴥ·ʔ 💛</h1><button class="admin-btn" id="adminOpen" type="button">🔐 관리자 모드</button></div><div class="search-row"><span class="sw"><input autocomplete="off" class="search" id="q" placeholder="꽃 이름검색(자음 검색가능)" type="search"/><button class="mic" id="micBtn" type="button" aria-label="음성으로 검색" hidden>🎤</button></span><span class="sw sw2"><input autocomplete="off" class="search" id="qb" placeholder="이름 검색" type="search"/><button class="mic" id="micBtn2" type="button" aria-label="음성으로 이름 검색" hidden>🎤</button></span><button class="member-btn" id="memberOpen" type="button">나의도감관리🖤</button></div></header>
 <section class="admin-area" id="adminLogin" hidden aria-label="관리자 로그인"><h2>🔐 관리자 로그인</h2><p>관리자 비밀번호를 입력해 주세요.</p><div class="admin-row"><input id="adminPassword" type="password" inputmode="numeric" autocomplete="off" placeholder="비밀번호" aria-label="관리자 비밀번호"/><button class="admin-action primary" id="adminLoginBtn" type="button">로그인</button></div><div class="admin-status" id="loginStatus" aria-live="polite"></div></section>
 <section class="admin-area" id="adminPanel" hidden aria-label="길드원 관리자"><h2>💛 길드원 일괄 관리</h2><p>한 줄에 한 항목씩 입력해 주세요. 변경 전 목록을 확인하고 실행하세요.</p><div class="admin-note">☁️ 아래에서 바꾼 내용은 Supabase 서버에 자동으로 저장돼서 모든 방문자에게 바로 보여요. HTML 파일을 다시 올릴 필요가 없어요.</div>
 <div class="admin-grid">
@@ -83,31 +81,6 @@ h1,h1 *{font-family:"Jua","BM JUA","Apple SD Gothic Neo","Malgun Gothic",sans-se
 <div><h3>🔑 언니들 공용 비밀번호</h3><p>"나의도감관리🖤"에 들어갈 때 쓰는 비밀번호예요. 관리자 비밀번호와는 따로이고, 이걸로는 삭제·이름 수정을 할 수 없어요. 바꾸면 언니들에게 새 비밀번호를 알려 주세요.</p><input id="memberPwNew" type="text" autocomplete="off" placeholder="새 공용 비밀번호 (2글자 이상)"/><div class="admin-row"><button class="admin-action primary" id="memberPwBtn" type="button">공용 비밀번호 바꾸기</button></div></div>
 </div>
 <h3>☁️ 서버 저장 / 백업</h3><p>위 기능을 쓰면 자동으로 서버에 저장돼요. 처음이거나 저장이 잘 됐는지 모르겠으면 "지금 서버에 저장"을 눌러 주세요. 백업이 필요하면 HTML을 내려받을 수 있어요.</p><div class="admin-row"><button class="admin-action primary" id="saveServerBtn" type="button">☁️ 지금 서버에 저장</button><button class="admin-action" id="exportHtmlBtn" type="button">백업용 HTML 다운로드</button><button class="admin-action" id="adminLogoutBtn" type="button">관리자 로그아웃</button></div><div class="admin-status" id="saveStatus" aria-live="polite"></div><div class="admin-status" id="adminStatus" aria-live="polite">관리자 기능을 사용할 수 있어요.</div></section>
-<section class="faq-area" id="faqPanel" hidden aria-label="자주 묻는 질문">
-  <h2>💌 자주 묻는 질문</h2>
-  <p>궁금한 점을 남겨 주세요. 등록된 질문과 답변은 모든 길드원이 볼 수 있어요.</p>
-  <div class="admin-grid">
-    <div><label for="faqAuthor">작성자 이름</label><input id="faqAuthor" maxlength="40" placeholder="길드원 이름 또는 닉네임" autocomplete="name"></div>
-    <div><label for="faqQuestion">질문 내용</label><textarea id="faqQuestion" maxlength="2000" placeholder="궁금한 내용을 적어 주세요."></textarea><div class="admin-row"><button class="admin-action primary" id="faqSubmit" type="button">질문 등록하기</button><button class="admin-action" id="faqReload" type="button">새로고침</button></div></div>
-  </div>
-  <div id="faqList" aria-live="polite"><div class="faq-empty">질문을 불러오는 중이에요…</div></div>
-  <div class="faq-admin-tools" id="faqAdminTools" hidden>
-    <h3>🔐 FAQ 관리자 설정</h3>
-    <p>기존 사이트 관리자 비밀번호로 로그인한 뒤, 등록된 길드원 이름을 선택해 관리자를 지정하거나 해제할 수 있어요.</p>
-    <div id="faqFirstAdminSetup" hidden>
-      <p>아직 FAQ 관리자가 없어요. 첫 관리자로 지정할 길드원 이름을 선택해 주세요.</p>
-      <select id="faqFirstMember"></select>
-      <div class="admin-row"><button class="admin-action primary" id="faqSetupFirst" type="button">첫 FAQ 관리자 지정</button></div>
-    </div>
-    <div id="faqAdminManage" hidden>
-      <label for="faqActingAdmin">관리 작업을 할 관리자 이름</label><select id="faqActingAdmin"></select>
-      <label for="faqTargetMember" style="display:block;margin-top:8px">추가하거나 제거할 길드원</label><select id="faqTargetMember"></select>
-      <div class="admin-row"><button class="admin-action primary" id="faqAddAdmin" type="button">관리자 추가</button><button class="admin-action danger" id="faqRemoveAdmin" type="button">관리자 제거</button></div>
-      <div id="faqAdminNames" class="faq-meta" style="margin-top:10px"></div>
-    </div>
-    <div class="admin-status" id="faqAdminStatus" aria-live="polite"></div>
-  </div>
-</section>
 <section class="panel"><div class="filters"><div><span class="label">등급</span><div class="pills" id="ranks"><span class="pill active">전체</span></div><div class="soul-panel" id="soulPanel2" hidden></div><div class="soul-panel" id="soulPanel" hidden></div></div><div><span class="label">도감</span><div class="pills" id="books"><a class="pill active" href="#results">전체</a></div></div></div><div class="stats" id="stats"><div class="stat"><b>72</b><span>리지 꽃</span></div><div class="stat"><b>8</b><span>UR</span></div><div class="stat"><b>11</b><span>SSR</span></div><div class="stat"><b>33</b><span>SR</span></div><div class="stat"><b>20</b><span>R</span></div></div></section><div class="heading"><h2>꽃 모아보기</h2></div><main aria-live="polite" class="results" id="results"></main><div class="count-bottom"><span class="count" id="count">리지 · 72종</span></div><div class="scrollbtns"><button type="button" id="goTop" aria-label="맨 위로">▲</button><button type="button" id="goBottom" aria-label="맨 아래로">▼</button></div><p class="foot">비공식 팬 도감 · 보내주신 목록을 기준으로 정리했어요 🌼</p></div><script>
 /* ===== Supabase 설정: 아래 두 칸에 본인 프로젝트 값을 붙여넣으세요 ===== */
 const SUPABASE_URL='https://esvdzibrdfwnsgouxjuh.supabase.co';
@@ -177,7 +150,7 @@ $('results').addEventListener('click',e=>{const b=e.target.closest('button[data-
 const setAdminStatus=msg=>{$('adminStatus').textContent=msg};
 const lines=id=>$(id).value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
 $('adminOpen').addEventListener('click',()=>{if(!$('adminPanel').hidden){$('adminPanel').hidden=true;return;}$('adminLogin').hidden=!$('adminLogin').hidden;if(!$('adminLogin').hidden){$('adminPassword').focus();}});
-$('adminLoginBtn').addEventListener('click',async()=>{const pwIn=$('adminPassword').value;let ok=false;try{ok=SB?(await sbCheck(pwIn))===true:pwIn==='1234'}catch(e){ok=false}if(ok){adminPw=pwIn;await sbLoadData();render();$('adminLogin').hidden=true;$('adminPanel').hidden=false;$('loginStatus').textContent='로그인됐어요. 관리자 기능을 사용할 수 있어요.';setAdminStatus('현재 길드원 '+D.books.length+'명 · 꽃 '+D.flowers.length+'종');$('adminPassword').value='';$('adminPanel').scrollIntoView({behavior:'smooth',block:'start'});if(!$('faqPanel').hidden)faqRefreshAdminTools();}else{$('loginStatus').textContent='비밀번호가 맞지 않아요. 다시 확인해 주세요.';$('adminPassword').value='';$('adminPassword').focus();}});
+$('adminLoginBtn').addEventListener('click',async()=>{const pwIn=$('adminPassword').value;let ok=false;try{ok=SB?(await sbCheck(pwIn))===true:pwIn==='1234'}catch(e){ok=false}if(ok){adminPw=pwIn;await sbLoadData();render();$('adminLogin').hidden=true;$('adminPanel').hidden=false;$('loginStatus').textContent='로그인됐어요. 관리자 기능을 사용할 수 있어요.';setAdminStatus('현재 길드원 '+D.books.length+'명 · 꽃 '+D.flowers.length+'종');$('adminPassword').value='';$('adminPanel').scrollIntoView({behavior:'smooth',block:'start'});}else{$('loginStatus').textContent='비밀번호가 맞지 않아요. 다시 확인해 주세요.';$('adminPassword').value='';$('adminPassword').focus();}});
 $('adminPassword').addEventListener('keydown',e=>{if(e.key==='Enter')$('adminLoginBtn').click()});
 $('deleteMembersBtn').addEventListener('click',()=>{const names=[...new Set(lines('deleteMembers'))];if(!names.length){setAdminStatus('삭제할 이름을 입력해 주세요.');return;}const existing=names.filter(n=>D.books.includes(n));if(!existing.length){setAdminStatus('입력한 이름 중 등록된 길드원이 없어요. 이름을 확인해 주세요.');return;}if(!confirm('다음 길드원을 삭제할까요?\n\n'+existing.join('\n')+'\n\n관련 꽃 목록에서도 제거됩니다.'))return;D.books=D.books.filter(n=>!existing.includes(n));existing.forEach(n=>delete D.urls[n]);D.flowers.forEach(f=>{f.books=(f.books||[]).filter(n=>!existing.includes(n));if(f.levels)existing.forEach(n=>delete f.levels[n]);});controls();stats();render();$('deleteMembers').value='';sbPersist();setAdminStatus('삭제 완료: '+existing.join(', ')+'\n현재 길드원 '+D.books.length+'명 · 꽃 '+D.flowers.length+'종');});
 $('addMembersBtn').addEventListener('click',()=>{const names=[...new Set(lines('addMembers'))];if(!names.length){setAdminStatus('등록할 길드원 이름을 입력해 주세요.');return;}const added=names.filter(n=>!D.books.includes(n));D.books.push(...added);controls();stats();render();$('addMembers').value='';sbPersist();setAdminStatus(added.length?'등록 완료: '+added.join(', ')+'\n이미 등록된 이름은 건너뛰었어요.':'모든 이름이 이미 등록되어 있어요.');});
@@ -194,7 +167,7 @@ $('hideList').addEventListener('click',e=>{const b=e.target.closest('[data-b]');
 $('s2DefList').addEventListener('click',e=>{const b=e.target.closest('[data-b]');if(!b)return;const n=b.dataset.b,d=D.soul2Default||[];D.soul2Default=d.includes(n)?d.filter(x=>x!==n):[...d,n];s2DefChips();soul2Draw();sbPersist();setAdminStatus('잡수소울 기본 활성 인원을 바꿨어요 🌱')});
 $('showAllBtn').addEventListener('click',()=>{D.hidden=[];hideChips();render();sbPersist();setAdminStatus('모든 길드원이 다시 보여요 💛')});
 $('saveServerBtn').addEventListener('click',async()=>{const ok=await sbPersist();setAdminStatus(ok?'현재 목록을 서버에 저장했어요.':SB?'저장하지 못했어요.':'Supabase가 연결되지 않았어요.');});
-$('adminLogoutBtn').addEventListener('click',()=>{adminPw=null;faqAdminNames=[];$('faqAdminTools').hidden=true;render();$('adminPanel').hidden=true;$('adminLogin').hidden=true;$('loginStatus').textContent='로그아웃했어요.';setAdminStatus('로그아웃됐어요.');if(!$('faqPanel').hidden)faqLoad();});
+$('adminLogoutBtn').addEventListener('click',()=>{adminPw=null;render();$('adminPanel').hidden=true;$('adminLogin').hidden=true;$('loginStatus').textContent='로그아웃했어요.';setAdminStatus('로그아웃됐어요.');});
 /* ===== 나의도감관리 (언니들용) ===== */
 (function(){
 const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
@@ -358,59 +331,7 @@ $('memberOpen').addEventListener('click',open);
 })();
 
 controls();stats();render();sbLoadData().then(sbLoad);soulLoad();setInterval(()=>{const t=kstDay(Date.now());if(t!==soulDay){soulDay=t;soulMem=[];if(!soulSrv)soulLocal([]);soulDraw();soulLoad();return}if(soulOpen&&!document.hidden)soulLoad()},15000);
-soul2Load();setInterval(()=>{const t=kstDay(Date.now());if(t!==soul2Day){soul2Day=t;soul2Rows={};soul2Local();soul2Draw();soul2Load();return}if(soul2Open&&!document.hidden)soul2Load()},15000);
-/* ===== FAQ: public questions + shared site-admin password + guild-member admin names ===== */
-let faqAdminNames=[];
-const faqEsc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-async function faqApi(fn,body){return sbRpc(fn,body)}
-async function faqLoad(){
-  const list=$('faqList'); if(!list)return; list.innerHTML='<div class="faq-empty">질문을 불러오는 중이에요…</div>';
-  if(!SB){list.innerHTML='<div class="faq-empty">Supabase 연결을 확인해 주세요.</div>';return;}
-  try{
-    const [qr,ar]=await Promise.all([
-      fetch(SBBASE+'/rest/v1/guild_faq_questions?select=id,author_name,question,created_at,updated_at&order=created_at.desc',{headers:sbH()}),
-      fetch(SBBASE+'/rest/v1/guild_faq_answers?select=id,question_id,answer,answered_by,created_at,updated_at',{headers:sbH()})
-    ]);
-    if(!qr.ok||!ar.ok)throw new Error('FAQ 데이터를 읽지 못했어요. SQL 실행 여부를 확인해 주세요.');
-    const qs=await qr.json(),as=await ar.json(),am=new Map(as.map(a=>[String(a.question_id),a]));
-    if(!qs.length){list.innerHTML='<div class="faq-empty">아직 등록된 질문이 없어요. 첫 질문을 남겨 주세요 🌷</div>';return;}
-    const acting=$('faqActingAdmin')?.value||'';
-    const canManage=!!(adminPw&&acting&&faqAdminNames.includes(acting));
-    list.innerHTML=qs.map(q=>{const a=am.get(String(q.id));return `<article class="faq-card" data-faq-id="${q.id}"><div class="faq-meta">질문 · ${faqEsc(q.author_name||'익명')} · ${new Date(q.created_at).toLocaleString('ko-KR')}</div><div class="faq-q">${faqEsc(q.question)}</div>${a?`<div class="faq-answer"><strong>💛 답변 · ${faqEsc(a.answered_by||'관리자')}</strong><div>${faqEsc(a.answer)}</div></div>`:'<div class="faq-meta" style="margin-top:8px">아직 답변을 기다리고 있어요.</div>'}${canManage?`<div class="faq-admin-tools"><label>질문 수정</label><textarea class="faq-edit-question" maxlength="2000">${faqEsc(q.question)}</textarea><div class="admin-row"><button class="admin-action" data-faq-action="editq" type="button">질문 수정 저장</button><button class="admin-action danger" data-faq-action="delq" type="button">질문 삭제</button></div><label style="display:block;margin-top:9px">관리자 답변</label><textarea class="faq-edit-answer" maxlength="4000" placeholder="답변을 작성해 주세요.">${faqEsc(a?.answer||'')}</textarea><div class="admin-row"><button class="admin-action primary" data-faq-action="savea" type="button">답변 저장</button>${a?'<button class="admin-action danger" data-faq-action="dela" type="button">답변 삭제</button>':''}</div></div>`:''}</article>`}).join('');
-  }catch(e){list.innerHTML=`<div class="faq-empty">${faqEsc(e.message||'질문을 불러오지 못했어요.')}</div>`;}
-}
-function faqFillMemberSelect(id,selected){const el=$(id);if(!el)return;const names=(D.books||[]).filter(n=>!(D.hidden||[]).includes(n));el.innerHTML=names.map(n=>`<option value="${faqEsc(n)}" ${n===selected?'selected':''}>${faqEsc(n)}</option>`).join('');if(!names.length)el.innerHTML='<option value="">등록된 길드원이 없어요</option>';}
-async function faqRefreshAdminTools(){
-  const tools=$('faqAdminTools'); if(!tools)return;tools.hidden=!adminPw;
-  if(!adminPw)return;
-  try{
-    const rows=await faqApi('faq_list_admins',{p_pw:adminPw});faqAdminNames=(rows||[]).map(x=>x.member_name);
-    const setup=$('faqFirstAdminSetup'),manage=$('faqAdminManage');
-    if(!faqAdminNames.length){setup.hidden=false;manage.hidden=true;faqFillMemberSelect('faqFirstMember');$('faqAdminStatus').textContent='첫 FAQ 관리자를 지정해 주세요.';return;}
-    setup.hidden=true;manage.hidden=false;
-    const acting=$('faqActingAdmin').value; $('faqActingAdmin').innerHTML=faqAdminNames.map(n=>`<option value="${faqEsc(n)}" ${n===acting?'selected':''}>${faqEsc(n)}</option>`).join('');
-    faqFillMemberSelect('faqTargetMember');$('faqAdminNames').textContent='현재 FAQ 관리자: '+faqAdminNames.join(' · ');
-    $('faqAdminStatus').textContent='관리자 설정을 사용할 수 있어요.';
-  }catch(e){faqAdminNames=[];$('faqAdminStatus').textContent='관리자 목록을 불러오지 못했어요. 관리자 비밀번호와 SQL 설정을 확인해 주세요.';$('faqFirstAdminSetup').hidden=true;$('faqAdminManage').hidden=true;}
-}
-$('faqOpen').addEventListener('click',async()=>{const panel=$('faqPanel');panel.hidden=!panel.hidden;if(!panel.hidden){await faqRefreshAdminTools();await faqLoad();panel.scrollIntoView({behavior:'smooth',block:'start'});}});
-$('faqReload').addEventListener('click',faqLoad);
-$('faqSubmit').addEventListener('click',async()=>{const author=$('faqAuthor').value.trim(),question=$('faqQuestion').value.trim();if(!author||!question){toast('작성자 이름과 질문 내용을 모두 적어 주세요.');return;}const b=$('faqSubmit');b.disabled=true;try{await faqApi('faq_add_question',{p_author_name:author,p_question:question});$('faqQuestion').value='';toast('질문이 등록됐어요 💛');await faqLoad();}catch(e){toast('질문을 등록하지 못했어요. SQL 설정을 확인해 주세요.');}finally{b.disabled=false;}});
-$('faqSetupFirst').addEventListener('click',async()=>{if(!adminPw){toast('먼저 기존 관리자 모드에 로그인해 주세요.');return;}const name=$('faqFirstMember').value;if(!name){toast('길드원 이름을 선택해 주세요.');return;}try{await faqApi('faq_setup_first_admin',{p_pw:adminPw,p_member_name:name});toast(name+' 님을 첫 FAQ 관리자로 지정했어요.');await faqRefreshAdminTools();await faqLoad();}catch(e){$('faqAdminStatus').textContent='첫 관리자 지정에 실패했어요. 선택한 이름이 현재 길드원인지, SQL 설정이 완료됐는지 확인해 주세요.';}});
-async function faqChangeAdmin(enabled){if(!adminPw){toast('먼저 관리자 모드에 로그인해 주세요.');return;}const acting=$('faqActingAdmin').value,target=$('faqTargetMember').value;if(!acting||!target){toast('관리자와 길드원 이름을 선택해 주세요.');return;}try{await faqApi('faq_set_admin',{p_pw:adminPw,p_admin_name:acting,p_member_name:target,p_enabled:enabled});toast(target+(enabled?' 님을 FAQ 관리자로 추가했어요.':' 님의 FAQ 관리자 권한을 해제했어요.'));await faqRefreshAdminTools();await faqLoad();}catch(e){$('faqAdminStatus').textContent='변경하지 못했어요. 마지막 관리자 삭제 여부와 관리자 권한을 확인해 주세요.';}}
-$('faqAddAdmin').addEventListener('click',()=>faqChangeAdmin(true));$('faqRemoveAdmin').addEventListener('click',()=>faqChangeAdmin(false));
-$('faqActingAdmin').addEventListener('change',faqLoad);
-$('faqList').addEventListener('click',async e=>{const b=e.target.closest('[data-faq-action]');if(!b)return;if(!adminPw)return;const card=b.closest('.faq-card'),id=Number(card?.dataset.faqId),acting=$('faqActingAdmin').value,action=b.dataset.faqAction;if(!id||!acting||!faqAdminNames.includes(acting))return;
-  try{
-    if(action==='editq'){const question=card.querySelector('.faq-edit-question').value.trim();if(!question)throw new Error();await faqApi('faq_save_question',{p_pw:adminPw,p_admin_name:acting,p_question_id:id,p_question:question});}
-    else if(action==='delq'){if(!confirm('이 질문과 답변을 삭제할까요?'))return;await faqApi('faq_delete_question',{p_pw:adminPw,p_admin_name:acting,p_question_id:id});}
-    else if(action==='savea'){const answer=card.querySelector('.faq-edit-answer').value.trim();if(!answer){toast('답변 내용을 적어 주세요.');return;}await faqApi('faq_save_answer',{p_pw:adminPw,p_admin_name:acting,p_question_id:id,p_answer:answer});}
-    else if(action==='dela'){if(!confirm('이 답변을 삭제할까요?'))return;await faqApi('faq_delete_answer',{p_pw:adminPw,p_admin_name:acting,p_question_id:id});}
-    toast('FAQ가 저장됐어요 💛');await faqLoad();
-  }catch(err){toast('저장하지 못했어요. 관리자 권한과 SQL 설정을 확인해 주세요.');}
-});
-
-</script><script>document.getElementById("goTop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});document.getElementById("goBottom").onclick=()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:"smooth"});
+soul2Load();setInterval(()=>{const t=kstDay(Date.now());if(t!==soul2Day){soul2Day=t;soul2Rows={};soul2Local();soul2Draw();soul2Load();return}if(soul2Open&&!document.hidden)soul2Load()},15000);</script><script>document.getElementById("goTop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});document.getElementById("goBottom").onclick=()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:"smooth"});
 const SRC=window.SpeechRecognition||window.webkitSpeechRecognition;
 function micInit(btn,inp){if(!SRC||!btn||!inp||btn.dataset.mic)return;btn.dataset.mic='1';btn.hidden=false;let rec=null,on=false;const ph=inp.placeholder;
   const stop=()=>{on=false;btn.classList.remove('on')};
